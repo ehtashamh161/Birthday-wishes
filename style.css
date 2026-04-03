@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-/* BACKGROUND ANIMATION */
+/* BACKGROUND */
 body {
     margin: 0;
+    padding: 0;
     height: 100vh;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
     background-size: 400% 400%;
     animation: bgAnim 10s ease infinite;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    overflow-y: auto;
 }
 @keyframes bgAnim {
     0% {background-position: 0% 50%;}
@@ -18,64 +22,65 @@ body {
 }
 
 /* CENTER */
-.container {
-    text-align: center;
+.container, .gallery-container {
     width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }
 
 /* TITLE */
-.glow-text {
-    font-family: 'Pacifico', cursive;
+.glow-text, .gallery-title {
     font-size: 50px;
-    color: white;
     text-shadow: 0 0 25px #ff00aa;
 }
 
-/* BUTTON */
-button {
+/* START BUTTON */
+button, .btn {
     padding: 15px 30px;
+    font-size: 22px;
     border: none;
-    font-size: 20px;
-    font-family: 'Pacifico', cursive;
     color: white;
     background: #ff0066;
     border-radius: 12px;
     cursor: pointer;
     box-shadow: 0 0 15px #ff0066;
     transition: 0.3s;
+    font-family: 'Pacifico', cursive;
 }
-button:hover { transform: scale(1.12); }
+button:hover, .btn:hover { transform: scale(1.1); }
+
+/* NEXT BUTTON */
+.next-btn, .next-btn2 {
+    background: #00c8ff;
+    margin-top: 40px;
+    box-shadow: 0 0 18px #00c8ff;
+}
+.next-btn.hidden { display: none; }
 
 /* TIMER */
 .timer {
-    color: white;
     font-size: 28px;
     text-shadow: 0 0 10px black;
 }
 
-/* BOX */
+/* GAME BOX */
 #box {
     width: 120px;
     height: 120px;
     background: #ff3d6b;
-    position: absolute;
     border-radius: 15px;
     box-shadow: 0 0 20px #ff0055;
-    transition: 0.15s;
+    position: absolute;
     cursor: pointer;
-
+    transition: 0.15s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     color: white;
-    font-family: 'Pacifico', cursive;
     font-size: 20px;
-    text-shadow: 0 0 5px black;
 }
 
-/* ARROW ANIMATION */
 .arrow {
     font-size: 30px;
     animation: arrowMove 0.7s infinite alternate;
@@ -91,17 +96,17 @@ button:hover { transform: scale(1.12); }
     animation: bounce 1s infinite;
 }
 @keyframes bounce {
-    0% {transform: translateY(0);}
     50% {transform: translateY(-15px);}
-    100% {transform: translateY(0);}
 }
 
-/* CONFETTI */
-.confetti {
+/* EFFECTS (CONFETTI, HEARTS, BALLOONS, SPARKLES) */
+.confetti, .heart, .balloon, .sparkle {
     position: fixed;
-    top: -10px;
-    width: 12px;
-    height: 12px;
+    z-index: 999;
+}
+
+.confetti {
+    width: 12px; height: 12px;
     background: hsl(var(--h), 70%, 60%);
     animation: fall linear forwards;
 }
@@ -109,50 +114,64 @@ button:hover { transform: scale(1.12); }
     to { transform: translateY(110vh) rotate(720deg); }
 }
 
-/* HEARTS */
 .heart {
-    position: fixed;
-    color: #ff88bb;
-    font-size: 28px;
-    animation: floatUp 3s linear forwards;
+    font-size: 30px;
+    animation: floatUp 20s linear forwards;
 }
 @keyframes floatUp {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-200px); }
+    to { transform: translateY(-200px); opacity: 0; }
 }
 
-/* BALLOONS */
 .balloon {
-    position: fixed;
-    bottom: -100px;
     font-size: 50px;
-    animation: rise 6s linear forwards;
+    bottom: -100px;
+    animation: rise 20s linear forwards;
 }
 @keyframes rise {
     to { transform: translateY(-120vh); opacity: 0; }
 }
 
-/* SPARKLES */
 .sparkle {
-    position: fixed;
-    width: 8px;
-    height: 8px;
+    width: 8px; height: 8px;
     background: white;
-    opacity: 0.8;
     border-radius: 50%;
+    opacity: .9;
     animation: sparkleAnim 1.5s linear forwards;
 }
 @keyframes sparkleAnim {
-    to { opacity: 0; transform: scale(2.5); }
+    to { opacity: 0; transform: scale(3);}
 }
 
 /* FINAL NOTE */
 .birthday-note {
     margin-top: 40px;
-    font-family: 'Pacifico', cursive;
     font-size: 28px;
-    color: white;
     text-shadow: 0 0 18px #ff00aa;
-    padding: 20px;
 }
-.hidden { display: none; }
+
+/* GALLERY PAGE PHOTO GRID */
+.photos {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.photos img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 0 25px #ff00dd;
+}
+
+/* WISHES */
+.wishes {
+    width: 80%;
+    margin: 35px auto;
+    font-size: 26px;
+    text-shadow: 0 0 12px #ff33aa;
+    line-height: 1.6;
+}
