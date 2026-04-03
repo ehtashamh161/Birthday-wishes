@@ -4,88 +4,8 @@
     <meta charset="UTF-8">
     <title>Birthday Moments</title>
 
-    <!-- Same Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
-    <!-- SAME CSS FILE AS MAIN PAGE -->
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* PAGE LAYOUT (Same as main) */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-            background-size: 400% 400%;
-            animation: bgAnim 10s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            color: white;
-            font-family: 'Pacifico', cursive;
-            overflow-y: auto;
-            padding-bottom: 40px;
-        }
-
-        .gallery-container {
-            width: 100%;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .gallery-title {
-            font-size: 45px;
-            text-shadow: 0 0 25px #ff00aa;
-        }
-
-        /* 3 PHOTOS */
-        .photos {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .photos img {
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
-            border-radius: 18px;
-            border: 4px solid white;
-            box-shadow: 0 0 25px #ff00dd;
-        }
-
-        /* WISHES  */
-        .wishes {
-            margin-top: 35px;
-            font-size: 26px;
-            text-shadow: 0 0 12px #ff33aa;
-            line-height: 1.6;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* NEXT BUTTON SAME STYLE */
-        .next-btn2 {
-            margin-top: 45px;
-            padding: 14px 30px;
-            font-size: 24px;
-            background: #00c8ff;
-            border-radius: 14px;
-            border: none;
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 0 25px #00c8ff;
-            font-family: 'Pacifico', cursive;
-            transition: 0.3s;
-        }
-        .next-btn2:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    https://fonts.googleapis.com/css2?family=Pacifico&display=swap
+    style.css
 </head>
 
 <body>
@@ -94,32 +14,37 @@
 
     <h1 class="gallery-title">🎉 Beautiful Birthday Moments 🎉</h1>
 
-    <!-- NAME COMES FROM SCRIPT -->
-    <h2 style="font-size: 32px; margin-top: -10px; text-shadow:0 0 10px #fff;">
+    <!-- NAME SHOW -->
+    <h2 style="font-size: 32px; text-shadow:0 0 15px #fff;">
         For <span id="friendNameShow"></span>
     </h2>
 
     <!-- PHOTOS -->
     <div class="photos">
-        <img src="photo1.jpg">
-        <img src="photo2.jpg">
-        <img src="photo3.jpg">
+        photo1.jpg
+        photo2.jpg
+        photo3.jpg
     </div>
 
-    <!-- 5-LINE WISHES -->
+    <!-- WISHES -->
     <div class="wishes">
         ✨ Allah aap ki zindagi me barkat daale.<br>
         🎉 Har saal aaj ke din se bhi behtar ho.<br>
         💖 Dua hai aap hamesha khush raho.<br>
-        🎂 Aap ke har sapne poore hon.<br>
-        🌟 Meri taraf se dil se bohot saari best wishes!
+        🎂 Aap ke har khawab poore hon.<br>
+        🌟 Meri taraf se bohot saari best wishes!
     </div>
 
-    <!-- CENTER NEXT BUTTON -->
-    <button class="next-btn2" onclick="location.hrefli"; // <--- bas yahan naam change karna hai
-   document.getElementById("friendNameShow").textContent = friendName;
+    <!-- NEXT -->
+    index.html⬅ Go Back</button>
+
+</div>
+
+<!-- FRIEND NAME -->
+<script>
+let friendName = "Ehtasham Hussain"; // ✅ SAME NAME AS INDEX PAGE
+document.getElementById("friendNameShow").textContent = friendName;
 </script>
 
 </body>
 </html>
-``
