@@ -25,7 +25,7 @@ function confettiBlast() {
 
 /* HEARTS */
 function floatingHearts() {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 20; i++) {
         let h = document.createElement("div");
         h.classList.add("heart");
         h.textContent = "❤️";
@@ -38,7 +38,7 @@ function floatingHearts() {
 
 /* BALLOONS */
 function floatingBalloons() {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 30; i++) {
         let b = document.createElement("div");
         b.classList.add("balloon");
         b.textContent = "🎈";
@@ -86,8 +86,19 @@ startBtn.onclick = () => {
 
 /* MOVE BOX */
 box.addEventListener("mouseover", () => {
-    box.style.top = Math.random() * (window.innerHeight - 150) + "px";
-    box.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    // center position
+    let centerX = (window.innerWidth / 2) - 75;   // 150px box → half = 75
+    let centerY = (window.innerHeight / 2) - 75;
+
+    // box ko center per le jao
+    box.style.top = centerY + "px";
+    box.style.left = centerX + "px";
+
+    // phir thoda delay se random jagah move karo (optional smoothness)
+    setTimeout(() => {
+        box.style.top = Math.random() * (window.innerHeight - 150) + "px";
+        box.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    }, 100);
 });
 
 /* CLICK WIN */
