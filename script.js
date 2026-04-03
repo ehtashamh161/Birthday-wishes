@@ -25,7 +25,7 @@ function confettiBlast() {
 
 /* HEARTS */
 function floatingHearts() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         let h = document.createElement("div");
         h.classList.add("heart");
         h.textContent = "❤️";
@@ -38,7 +38,7 @@ function floatingHearts() {
 
 /* BALLOONS */
 function floatingBalloons() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 15; i++) {
         let b = document.createElement("div");
         b.classList.add("balloon");
         b.textContent = "🎈";
@@ -74,7 +74,7 @@ startBtn.onclick = () => {
             box.style.display = "none";
 
             msg.innerHTML = `
-                ⏳ Time khatam ho gaya!<br>
+                ⏳ Wishing you joy on your special day!<br>
                 🎂 Happy Birthday ${friendName}! 🎉
             `;
             msg.classList.remove("hidden");
