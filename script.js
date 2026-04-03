@@ -4,13 +4,14 @@ let box = document.getElementById("box");
 let msg = document.getElementById("message");
 let timerDisplay = document.getElementById("timer");
 let finalNote = document.getElementById("finalNote");
+let nextBtn = document.querySelector(".next-btn");
 
-let friendName = " EHTASHAM HUSSAIN ";  // ← YAHAN SIRF NAAM CHANGE KARNA HAI ✅
+let friendName = " Ehtasham Hussain ";  // ✅ YAHAN FRIEND KA NAAM CHANGE KARO
 
 let timeLeft = 10;
 let timer;
 
-/* CONFETTI */
+/* Effects */
 function confettiBlast() {
     for (let i = 0; i < 50; i++) {
         let c = document.createElement("div");
@@ -22,8 +23,6 @@ function confettiBlast() {
         setTimeout(() => c.remove(), 3000);
     }
 }
-
-/* HEARTS */
 function floatingHearts() {
     for (let i = 0; i < 20; i++) {
         let h = document.createElement("div");
@@ -35,10 +34,8 @@ function floatingHearts() {
         setTimeout(() => h.remove(), 3000);
     }
 }
-
-/* BALLOONS */
 function floatingBalloons() {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 20; i++) {
         let b = document.createElement("div");
         b.classList.add("balloon");
         b.textContent = "🎈";
@@ -47,8 +44,6 @@ function floatingBalloons() {
         setTimeout(() => b.remove(), 6000);
     }
 }
-
-/* SPARKLES */
 function glitter() {
     for (let i = 0; i < 20; i++) {
         let s = document.createElement("div");
@@ -79,29 +74,21 @@ startBtn.onclick = () => {
             `;
             msg.classList.remove("hidden");
 
-            setTimeout(() => finalNote.classList.remove("hidden"), 2000);
+            setTimeout(() => {
+                finalNote.classList.remove("hidden");
+                nextBtn.classList.remove("hidden");
+            }, 2000);
         }
     }, 1000);
 };
 
 /* MOVE BOX */
 box.addEventListener("mouseover", () => {
-    // center position
-    let centerX = (window.innerWidth / 2) - 75;   // 150px box → half = 75
-    let centerY = (window.innerHeight / 2) - 75;
-
-    // box ko center per le jao
-    box.style.top = centerY + "px";
-    box.style.left = centerX + "px";
-
-    // phir thoda delay se random jagah move karo (optional smoothness)
-    setTimeout(() => {
-        box.style.top = Math.random() * (window.innerHeight - 150) + "px";
-        box.style.left = Math.random() * (window.innerWidth - 150) + "px";
-    }, 100);
+    box.style.top = Math.random() * (window.innerHeight - 150) + "px";
+    box.style.left = Math.random() * (window.innerWidth - 150) + "px";
 });
 
-/* CLICK WIN */
+/* WIN EVENT */
 box.addEventListener("click", () => {
     clearInterval(timer);
     box.style.display = "none";
@@ -113,10 +100,12 @@ box.addEventListener("click", () => {
 
     msg.innerHTML = `
         🎉 Happy Birthday ${friendName}! 🎉<br>
-        🎈 Wishing You a Wonderful Birthday
-        🥳 On Your Special Day…! 💖
+        🥳 Aap ne challenge jeet liya! 💖
     `;
     msg.classList.remove("hidden");
 
-    setTimeout(() => finalNote.classList.remove("hidden"), 2000);
+    setTimeout(() => {
+        finalNote.classList.remove("hidden");
+        nextBtn.classList.remove("hidden");
+    }, 2000);
 });
